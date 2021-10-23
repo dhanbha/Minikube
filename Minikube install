@@ -1,5 +1,33 @@
+Create EC2 instance with 2 vCPU
+
 #install kubectl CLI
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt) && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 
 #install minikube
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64  && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+#install conntrack
+apt install conntrack
+
+minikube start --vm-driver=none
+
+minucube status
+
+kubectl version
+kubectl get nodes
+kubectl describe nodes
+
+
+create pod.yaml file
+
+kubectl apply -f pod.yaml
+kubectl get pods -O wide
+kubectl describe pod
+kubecl describe pod <pod-name>
+kubectl logs -f testpod
+kubectl delete pod <pod-name>
+
+*************************************************
+
+
+
