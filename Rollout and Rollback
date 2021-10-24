@@ -19,4 +19,6 @@ Now do any chnages on deployment file and again deploy it.
 
 
 #Rollback
-kubectl rollout undo deploy/mydeployements
+kubectl rollout undo deploy/<mydeployments>
+
+Kubectl get all
